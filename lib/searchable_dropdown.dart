@@ -60,6 +60,7 @@ class SearchableDropdown<T> extends StatefulWidget {
   final dynamic label;
   final dynamic closeButton;
   final EdgeInsetsGeometry contentPadding;
+  final CrossAxisAlignment selectedCrossAxisAlignment;
   final bool displayClearIcon;
   final Icon clearIcon;
   final Color iconEnabledColor;
@@ -128,6 +129,7 @@ class SearchableDropdown<T> extends StatefulWidget {
     dynamic label,
     dynamic closeButton = "Close",
     EdgeInsetsGeometry contentPadding,
+    CrossAxisAlignment selectedCrossAxisAlignment,
     bool displayClearIcon = true,
     Icon clearIcon = const Icon(Icons.clear),
     Color iconEnabledColor,
@@ -157,6 +159,7 @@ class SearchableDropdown<T> extends StatefulWidget {
       searchHint: searchHint,
       hint: hint,
       contentPadding: contentPadding,
+      selectedCrossAxisAlignment: selectedCrossAxisAlignment = CrossAxisAlignment.center,
       disabledHint: disabledHint,
       icon: icon,
       underline: underline,
@@ -225,6 +228,7 @@ class SearchableDropdown<T> extends StatefulWidget {
     dynamic searchHint,
     dynamic hint,
     EdgeInsetsGeometry contentPadding,
+    CrossAxisAlignment selectedCrossAxisAlignment = CrossAxisAlignment.center,
     dynamic disabledHint,
     dynamic icon = const Icon(Icons.arrow_drop_down),
     dynamic underline,
@@ -257,6 +261,7 @@ class SearchableDropdown<T> extends StatefulWidget {
       searchHint: searchHint,
       hint: hint,
       contentPadding: contentPadding,
+      selectedCrossAxisAlignment: selectedCrossAxisAlignment,
       disabledHint: disabledHint,
       icon: icon,
       underline: underline,
@@ -296,6 +301,7 @@ class SearchableDropdown<T> extends StatefulWidget {
     this.searchHint,
     this.hint,
     this.contentPadding,
+    this.selectedCrossAxisAlignment,
     this.disabledHint,
     this.icon,
     this.underline,
@@ -339,6 +345,7 @@ class SearchableDropdown<T> extends StatefulWidget {
     this.searchHint,
     this.hint,
     this.contentPadding,
+    this.selectedCrossAxisAlignment,
     this.disabledHint,
     this.icon = const Icon(Icons.arrow_drop_down),
     this.underline,
@@ -532,6 +539,7 @@ class _SearchableDropdownState<T> extends State<SearchableDropdown<T>> {
       innerItemsWidget = items[hintIndex];
     } else {
       innerItemsWidget = Column(
+      	crossAxisAlignment: widget.selectedCrossAxisAlignment,
         children: list,
       );
     }
