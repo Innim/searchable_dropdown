@@ -159,7 +159,7 @@ class SearchableDropdown<T> extends StatefulWidget {
       searchHint: searchHint,
       hint: hint,
       contentPadding: contentPadding,
-      selectedCrossAxisAlignment: selectedCrossAxisAlignment = CrossAxisAlignment.center,
+      selectedCrossAxisAlignment: selectedCrossAxisAlignment,
       disabledHint: disabledHint,
       icon: icon,
       underline: underline,
