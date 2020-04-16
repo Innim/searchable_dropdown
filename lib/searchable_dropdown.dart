@@ -129,7 +129,7 @@ class SearchableDropdown<T> extends StatefulWidget {
     dynamic label,
     dynamic closeButton = "Close",
     EdgeInsetsGeometry contentPadding,
-    CrossAxisAlignment selectedCrossAxisAlignment,
+    CrossAxisAlignment selectedCrossAxisAlignment = CrossAxisAlignment.center,
     bool displayClearIcon = true,
     Icon clearIcon = const Icon(Icons.clear),
     Color iconEnabledColor,
